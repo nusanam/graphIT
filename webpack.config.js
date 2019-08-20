@@ -1,6 +1,8 @@
 const path = require('path');
 
 module.exports = {
+  mode: "development",
+  // publicPath: '/dist/',
   entry: './client/index.js', // entry point of root JS file
   module: { // this describes which transformations to make on your code via loaders
     /* Hey webpack compiler, when you come across a path that resolves to a * '.txt' file inside of a require()/import statement, use the raw-loader to * transform it before you add it to the bundle.
@@ -27,5 +29,4 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'), // where output file should be saved
     filename: 'index_bundle.js' // what the output filename should be
   },
-  mode: "development",
 }
