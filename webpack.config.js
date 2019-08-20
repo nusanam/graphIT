@@ -16,10 +16,6 @@ module.exports = {
           loader: 'babel-loader',
           options: {
             presets: ['@babel/preset-env', '@babel/preset-react'],
-            // not sure if i need below, if i do then i need to do 
-            // npm install --save- dev @babel/plugin-transform-runtime
-            // npm install --save @babel/runtime
-            // plugins: ['@babel/plugin-transform-runtime', '@babel/transform-async-to-generator'],
           },
         }
       }
@@ -29,4 +25,9 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'), // where output file should be saved
     filename: 'index_bundle.js' // what the output filename should be
   },
+  devServer: {
+    publicPath: '/dist/',
+    // don't need to change this for express.js
+    contentBase: './client/', // forward slash, /, bc that's where html file is
+  }
 }
