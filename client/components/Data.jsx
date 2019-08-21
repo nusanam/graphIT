@@ -33,13 +33,12 @@ class Data extends Component {
           <input id="input" size="30" placeholder="[12, 5, 20, null, 17, 8, 12.5, 800, 9]" />
           &nbsp;&nbsp;
           <button id="submitBtn">Submit</button>
+        </p>
           <div id="example">
-            <br />
             Submit one dataset at a time as an <u><strong>array</strong></u> of values. If a data value inside of a dataset doesn't exist, use null in its place inside the array.
             <br /> <br />
             <strong>NOTE: </strong> The number of labels must exactly <strong><u>equal</u></strong> the number of values in a single dataset.
           </div>
-        </p>
         <div className="ui divider" />
 
         {/* Instantiating an instance of graph display */}
