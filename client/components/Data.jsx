@@ -15,7 +15,7 @@ class Data extends Component {
             X-axis Values: &nbsp;</span>
           <input id="input" size="31" placeholder="[ 'Kiwis', 'Pears', 'Apples' , 'Limes' ]" />
           &nbsp; &nbsp;
-          <button id="submitBtn">Submit</button>
+          <button id="submitBtn" >Submit</button>
           <br />
           <br />
           <span id="example">
