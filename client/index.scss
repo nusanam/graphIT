@@ -1,0 +1,50 @@
+// @import url("https://p.typekit.net/p.css?s=1&k=swf2hgm&ht=tk&f=30810.30811.30768.30770.30771&a=2637445&app=typekit&e=css");
+
+$peach: #D68D86;
+$brightpeach: #FFDBCB;
+$turqoise: #27ccb3;
+$grey: #F6F6F6;
+
+body {
+  // font-family:"benton-modern";
+  margin-left: 1em;
+  margin-right: 1em;
+  color: darken($peach, 0%);
+  background-color: $grey;
+}
+
+#header {
+  color: darken($peach, 10%);
+}
+
+.outerbox{
+
+  ::placeholder {
+    color: darken($grey, 15%);
+  }
+
+  #graph {
+    font-size: 1.5em;
+    color: darken($grey, 45%);
+  }
+
+  #data {
+    font-size: 1.2em;
+    color: darken($grey, 45%);
+  }
+
+  #example {
+    font-size: 1.1em;
+  }
+
+  #submitBtn, #select {
+    background-color: white;
+    color: $peach;
+    /* margin-left: 1em;
+    margin-right: 0.45em; */
+    border: 1;
+    border-radius: 10px;
+    // border-color: $turqoise;
+  }
+
+}

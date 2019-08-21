@@ -1,13 +1,19 @@
 <!DOCTYPE html>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+<script src="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
 <html>
 <header>
   <title>GraphIT</title>
 </header>
 
 <body>
-  <h1>GraphIT</h1>
-  <p>Make Graphs Easily</p>
-  <div id='app'></div>
+  <h2 id="header">GraphIT: Make Graphs Easily</h2>
+  <!-- REACT COMPONENTS START -->
+  <div id='app'>
+    <!-- THIS IS THE CHARTIST DIV -->
+    <div class="ct-chart ct-perfect-fourth"></div>
+  </div>
 </body>
 <script src="dist/index_bundle.js"></script>
 <!-- need a script to load bundle js -->

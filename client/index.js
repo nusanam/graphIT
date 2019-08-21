@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './index.scss';
 import Data from './components/Data.jsx'
 
 class App extends Component {
