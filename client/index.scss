@@ -1,9 +1,10 @@
 // @import url("https://p.typekit.net/p.css?s=1&k=swf2hgm&ht=tk&f=30810.30811.30768.30770.30771&a=2637445&app=typekit&e=css");
 
 $peach: #D68D86;
-$brightpeach: #FFDBCB;
 $turqoise: #27ccb3;
 $grey: #F6F6F6;
+// $brightPeach: #FFDBCB;
+// $graphRed: #D70005;
 
 body {
   // font-family:"benton-modern";
@@ -34,17 +35,41 @@ body {
   }
 
   #example {
+    font-style: italic;
     font-size: 1.1em;
+    margin-left: 0.8em;
+    width: 80%;
+    color: lighten($peach, 10%)
   }
 
-  #submitBtn, #select {
+  #submitBtn {
     background-color: white;
     color: $peach;
     /* margin-left: 1em;
     margin-right: 0.45em; */
     border: 1;
     border-radius: 10px;
-    // border-color: $turqoise;
+    border-color: $peach;
+  }
+
+  #select {
+    margin-left: 0.5em;
+    color: $peach;
+    /* margin-left: 1em;
+    margin-right: 0.45em; */
+    border: 1;
+    font-size: 1.1em;
+    border-radius: 10px;
+    border-color: $peach;
+  }
+
+  #saveBtn {
+    background-color: $peach;
+    color: $grey;
+    margin-left: 0.5em;
+    // margin-right: 0.45em; 
+    border: 2;
+    border-radius: 10px;
   }
 
 }
