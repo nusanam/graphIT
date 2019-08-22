@@ -16,7 +16,8 @@
     "express": "^4.17.1",
     "react": "^16.9.0",
     "react-chartist": "^0.13.3",
-    "react-dom": "^16.9.0"
+    "react-dom": "^16.9.0",
+    "victory": "^33.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",

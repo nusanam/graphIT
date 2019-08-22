@@ -30,51 +30,55 @@ class Data extends Component {
 
   render() {
     // if you add constructor class and super(props), you inhert state and props from the parent component 
-    const { labels, series, updateStateX, updateStateY } = this.props;
+    const { labels, /*series,*/ updateStateX, updateStateY } = this.props;
+    
+    // checkEmpty() {
+    //   return 2 + 2;
+    // }
 
     return (
       <div className="outerbox">
 
         {/* X-Axis Labels section */}
-        <div className="ui divider" />
+        <div id="xaxis">
           <span id="data">
             X-axis Values: &nbsp; </span>
-          <form onSubmit={updateStateX} >
+          <form onSubmit={updateStateX}>
         <p>
-            <input id="input" type="text" size="31" placeholder="[ 'Kiwis', 'Pears', 'Apples' , 'Limes' ]" />
+            <input id="input" type="text" size="31" placeholder="Kiwis, Peaches, Pears, Apples" />
             &nbsp; &nbsp;
              <input id="submitBtn" type="submit" value="Submit" />
         </p>
           </form>
-          <br /><span id="example">
-          Input x-axis labels as an <span id="highlightWord" style={{ color: '#E3B1AC', backgroundColor: '#f2f2f2' }} >array</span> of strings.
-            </span>
-          <br />
-
-        <br />
+          <br /><div id="example">
+            Input each x-axis value separated by <strong><u>one space</u></strong> as one line before hitting the submit button.  <br /><br />
+            Each value will appear on the graph as a label on the horizontal axis for the x-value it represents. 
+            </div>
+          <br /> <br /> <br />
+        </div>
         {/* Submit data section */}
+        <div id="yaxis">
           <span id="data">
-            Single Dataset: &nbsp;</span>
-          <form onClick={updateStateY} >
+           Y-Axis Values: &nbsp;</span>
+          <form /*onSubmit={updateStateY} */>
           <input id="input" type="text" size="30" placeholder="[12, 5, 20, null, 17, 8, 12.5, 800, 9]" />
           &nbsp;&nbsp;
-          <input id="submitBtn" type="submit" value="Submit" />
+          {/* <input id="submitBtn" type="submit" value="Submit" /> */}
           </form>
-        <p>
-        </p>
 
+          <br/><br />
         <div id="example">
-          These represent your y-values. Submit one dataset at a time as an <span id="highlightWord" style={{ color: '#E3B1AC', backgroundColor: '#f2f2f2' }} >array</span> of values.
-          <br/><br/>If a data value inside of a dataset doesn't exist, use <span id="highlightWord" style={{ color: '#E3B1AC', backgroundColor: '#f2f2f2' }} >null</span> in its place inside the array.
+          Submit one set of y-value data at a time as an <span id="highlightWord" style={{ color: '#D70005', backgroundColor: '#f2f2f2' }} ><code>array</code></span> of values.
+          <br /><br />If a data value inside of a dataset doesn't exist, use <span id="highlightWord" style={{ color: '#D70005', backgroundColor: '#f2f2f2' }} ><code>null</code></span> in its place inside the <span id="highlightWord" style={{ color: '#D70005', backgroundColor: '#f2f2f2' }} ><code>array</code></span>.
           <br /> <br />
           <span id="highlightWord" style={{ color: '#838383'}} > Note:</span> The number of labels must exactly <strong><u>equal</u></strong> the number of values in a single dataset.
           </div>
-        <div className="ui divider" />
+        </div>
 
         {/* Instantiating an instance of graph display */}
         <GraphDisplay
-          labels={this.props.labels}
-          series={this.props.series}
+          labels={labels}
+          // series={series}
         // options={options}
         // type={type}
         />

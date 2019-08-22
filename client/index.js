@@ -8,7 +8,7 @@ class App extends Component {
     super(props)
     this.state = {
       labels: [],
-      series: [],
+      // series: [],
       // options: {
       //   divisor: 0,
       //   showArea: false,
@@ -20,22 +20,29 @@ class App extends Component {
   updateStateX(arr) {
     arr.preventDefault();
     console.log('UpdateX', arr.target[0].value);
-    // this.setState({labels: arr})
+    let unstringifiedArr = arr.target[0].value;
+    unstringifiedArr = unstringifiedArr.split(' ')
+    this.setState({ labels: unstringifiedArr })
   }
 
   updateStateY(arr) {
+    arr.preventDefault();
     console.log('UpdateY', arr.target[0].value)
-    // this.setState({ series: arr })
+    let pushedSeries = this.state.series;
+    pushedSeries.push(arr.target[0].value)
+    this.setState({ series: pushedSeries});
   }
 
   render() {
     return (
       <div>
         <Data
-          updateStateX={this.updateStateX}
-          updateStateY={this.updateStateY}
-          labels={this.state.labels}
-          series={this.state.series} />
+          updateStateX={this.updateStateX.bind(this)}
+          // updateStateY={this.updateStateY.bind(this)}
+          labels={this.state.labels} 
+          // series={this.state.series} 
+        />
+
       </div>
     )
   }
