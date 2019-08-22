@@ -62,13 +62,12 @@ body {
     color: darken($prettyPeach, 20%);
     border-radius: 10px
 
-  #chartistGraph {
-    margin-right: 0.5em;
-  }
-
   }
 }
  
+  #chartistGraph {
+    margin-right: 0.5em;
+  }
 
   #submitBtn {
     background-color: $grey;
