@@ -8,7 +8,16 @@ $grey: #f6f6f6;
 $graphRed: #d70005;
 $chartistRed: #a92f32;
 
+#header {
+  display: flex;
+  // margin-inline-start: 3em;
+  flex-wrap: wrap;
+  align-content: center;
+  color: $chartistRed; //darken($peach, 10%);
+}
+
 body {
+  
   // font-family:"benton-modern";
   display: flex;
   flex-direction: column;
@@ -20,12 +29,21 @@ body {
   color: darken($peach, 0%);
   background-color: $grey;
 
-  #selectGraphDiv {
+  #graphDisplay {
+    border: 2px;
+    border-color: $peach;
+    padding-bottom: 1em;
+  }
+
+  #selectGraphDiv,
+  #selectTypeDiv {
     display: flex;
-    align-content: center;
+    justify-content: center;
+    padding-bottom: 1em;
 
     #selectText {
       font-family: "Inconsolata", monospace;
+      color: $chartistRed;//darken($grey, 45%);
       font-size: 0.9em;
       margin-left: 0.8em;
     }
@@ -43,16 +61,12 @@ body {
   }
 }
 
-#header {
-  display: flex;
-  margin-inline-start: 3em;
-  align-content: center;
-  color: $peach; //darken($peach, 10%);
-}
+
 
 #app {
-  margin-left: 2em;
-  width: 65%;
+  display: flex;
+  justify-content: center;
+  // margin-left: 2em;
 
   .outerbox {
     ::placeholder {
@@ -61,7 +75,7 @@ body {
 
     #xaxis,
     #yaxis {
-      margin-left: 5em;
+      margin-left: 2em;
     }
 
     #graph {
@@ -91,9 +105,9 @@ body {
     }
   }
 
-  #innerBox {
-    margin-left: 0.5em;
-  }
+  // #innerBox {
+  //   margin-left: 0.5em;
+  // }
 
   #submitBtn {
     background-color: $grey;

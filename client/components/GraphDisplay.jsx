@@ -7,18 +7,20 @@ import * as V from 'victory';
 class GraphDisplay extends React.Component {
 
   render() {
-    console.log('this is current props object', this.props)
+    console.log('Props object BEFORE passing labels/series into chartist\'s required data object', this.props)
     const { labels, series, /*options, type*/ } = this.props;
+    console.log('series before passing down into chartist graph template', series)
+
+      // pushing submitted y values into an array
+    //   const dataArr = [];
+    // dataArr.push(series);
+    // const deepCloneArray = JSON.parse(JSON.stringify(dataArr))
 
     const data = {
-      labels: labels,//['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13'],
-      series: series
-      // [
-      // [10, 14, 14, 12, 11, 12, 16, 12, 16, 12, 17, 23, 25]
-      // 10, 14, 14, 12, 11, 12, 16, 12, 16, 12, 17, 23, 25
-
+      labels: labels,
+      series: [series] 
+      // 
       //[6, 8, 9, 10, 20, 10, 10, 17, 18, 20, 22, 27, 29]
-      // ]
     };
     console.log('ARE LABELS & SERIES PASSING IN?', data)
 
@@ -36,7 +38,16 @@ class GraphDisplay extends React.Component {
     return (
       <div id="innerBox">
         <div id="graphDisplay">
-          <br /><br />
+          <br /> <br />
+          <div id="selectTypeDiv">
+            <span id="selectText">
+              What kind of graph would you like? &nbsp;</span>
+            <select id="select">
+              <option value="Line">Line</option>
+              <option value="Bar">Bar</option>
+            </select>
+          </div>
+
           {/* <div id="graph">Graph */}
           {/* </div> */}
 
@@ -56,7 +67,6 @@ class GraphDisplay extends React.Component {
           </div>
         </div>
 
-        <br />
         <div id="graphButtons">
           <button id="saveBtn">Save Graph</button>
           <button id="storeGraphBtn">Store Graph</button>

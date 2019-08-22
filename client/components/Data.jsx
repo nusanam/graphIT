@@ -12,22 +12,6 @@ class Data extends Component {
     // this.onSubmitY = this.onSubmitY.bind(this);
   }
 
-  // onClickX(event) {
-  //   event.preventDefault();
-  //   const newStateX = Object.create(this.state)
-  //   newStateX.labels = event.target.value;
-  //   console.log('X-State has changed!', newStateX)
-  //   this.setState(newStateX);
-  // }
-
-  // onClickY(event) {
-  //   event.preventDefault();
-  //   const newStateY = Object.create(this.state)
-  //   newStateY.series.concat(event.target.value);
-  //   console.log('Y-State has changed!', newStateY)
-  //   this.setState(newStateY);
-  // }
-
   render() {
     // if you add constructor class and super(props), you inhert state and props from the parent component 
     const { labels, series, updateStateX, updateStateY } = this.props;
@@ -45,7 +29,7 @@ class Data extends Component {
             X-axis Values: &nbsp; </span>
           <form onSubmit={updateStateX}>
         <p>
-            <input id="input" type="text" size="41" placeholder="Kiwis, Peaches, Pears, Apples, Pineapples..." />
+            <input id="input" type="text" size="30" placeholder="Kiwis, Peaches, Pears, Apples..." />
             &nbsp; &nbsp;
              <input id="submitBtn" type="submit" value="Submit" />
         </p>
@@ -62,7 +46,7 @@ class Data extends Component {
             Y-Axis Values: &nbsp;</span>
           
           <form onSubmit={updateStateY} >
-          <input id="input" type="text" size="40" placeholder="[12, 5, 20, null, 17, 8, 12.5, 800, 9]..." />
+          <input id="input" type="text" size="30" placeholder="[12, 5, 20, null, 8, 12.5, 800, 9]..." />
           &nbsp;&nbsp;
           <input id="submitBtn" type="submit" value="Submit" />
           </form>
@@ -73,7 +57,7 @@ class Data extends Component {
           <span id="highlightWord" style={{ color: '#838383'}} > Note:</span> The number of labels must exactly <strong><u>equal</u></strong> the number of values in a single dataset.
           </div>
         </div>
-
+      
         {/* Instantiating an instance of graph display */}
         <GraphDisplay
           labels={labels}
