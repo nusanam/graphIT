@@ -8,16 +8,19 @@ class GraphDisplay extends React.Component {
 
   render() {
     console.log('this is current props object', this.props)
-    const { labels, /*series, options, type*/ } = this.props;
+    const { labels, series, /*options, type*/ } = this.props;
+
     const data = {
       labels: labels,//['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13'],
-      series: //{series},
-        [
-        [10, 14, 14, 12, 11, 12, 16, 12, 16, 12, 17, 23, 25]
-        //[6, 8, 9, 10, 20, 10, 10, 17, 18, 20, 22, 27, 29]
-        ]
+      series: series
+      // [
+      // [10, 14, 14, 12, 11, 12, 16, 12, 16, 12, 17, 23, 25]
+      // 10, 14, 14, 12, 11, 12, 16, 12, 16, 12, 17, 23, 25
+
+      //[6, 8, 9, 10, 20, 10, 10, 17, 18, 20, 22, 27, 29]
+      // ]
     };
-    console.log('LABELS ARE PASSING IN', data)
+    console.log('ARE LABELS & SERIES PASSING IN?', data)
 
     const options = {
       // high: 30,
@@ -31,30 +34,33 @@ class GraphDisplay extends React.Component {
     let type = 'Line'
 
     return (
-      <div>
-        <br /><br />
-        <div id="graph">Graph
-        <br /><br />
-        </div>
+      <div id="innerBox">
+        <div id="graphDisplay">
+          <br /><br />
+          {/* <div id="graph">Graph */}
+          {/* </div> */}
 
-        {/* BELOW IS STRETCH FEATURE TO SELECT STORED GRAPHS 
+          {/* BELOW IS STRETCH FEATURE TO SELECT STORED GRAPHS 
         Might need to transform this into a for loop to push 
         an option with a value attribute to 
         store/load all saved graphs
         */}
-          <span id="selectText">
-            Select from stored graphs: &nbsp;</span>
-            <select id="select">
-                <option value="cohortdata">Cohort Data</option>
-                <option value="cereal">Cereal or milk first</option>
-            </select>
-
-        <div id="chartistGraph">
           <ChartistGraph data={data} options={options} type={type} />
+          <div id="selectGraphDiv">
+            <span id="selectText">
+              Select from stored graphs: &nbsp;</span>
+            <select id="select">
+              <option value="cohortdata">Cohort Data</option>
+              <option value="cereal">Cereal or milk first</option>
+            </select>
+          </div>
         </div>
-        <br/>
-        <button id="saveBtn">Save Graph</button>
 
+        <br />
+        <div id="graphButtons">
+          <button id="saveBtn">Save Graph</button>
+          <button id="storeGraphBtn">Store Graph</button>
+        </div>
       </div>
     )
   }

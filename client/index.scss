@@ -1,78 +1,104 @@
-@import url('https://fonts.googleapis.com/css?family=Inconsolata|Major+Mono+Display|Montserrat&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Inconsolata|Major+Mono+Display|Montserrat&display=swap");
 
-$peach: #D68D86;
+$peach: #d68d86;
 $prettyPeach: #e0c7c7;
 $turqoise: #27ccb3;
-$grey: #F6F6F6;
+$grey: #f6f6f6;
 // $brightPeach: #FFDBCB;
-$graphRed: #D70005;
+$graphRed: #d70005;
 $chartistRed: #a92f32;
 
 body {
   // font-family:"benton-modern";
-  display: flex; 
+  display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   align-content: center;
   // margin-left: 1em;
   // margin-right: 1em;
-  font-family: Georgia,serif; 
+  font-family: Georgia, serif;
   color: darken($peach, 0%);
   background-color: $grey;
-  
+
+  #selectGraphDiv {
+    display: flex;
+    align-content: center;
+
+    #selectText {
+      font-family: "Inconsolata", monospace;
+      font-size: 0.9em;
+      margin-left: 0.8em;
+    }
+    #select {
+      margin-left: 0.5em;
+      color: $peach;
+      font-family: "Inconsolata", monospace;
+      /* margin-left: 1em;
+    margin-right: 0.45em; */
+      border: 1;
+      font-size: 0.8em;
+      border-radius: 10px;
+      border-color: $peach;
+    }
+  }
 }
 
 #header {
   display: flex;
-  padding: 10px;
+  margin-inline-start: 3em;
   align-content: center;
   color: $peach; //darken($peach, 10%);
 }
 
 #app {
- margin-left: 2em;
+  margin-left: 2em;
+  width: 65%;
 
-.outerbox{
+  .outerbox {
+    ::placeholder {
+      color: darken($grey, 15%);
+    }
 
-  ::placeholder {
-    color: darken($grey, 15%);
+    #xaxis,
+    #yaxis {
+      margin-left: 5em;
+    }
+
+    #graph {
+      font-family: Georgia, serif;
+      font-size: 1.5em;
+      color: darken($grey, 45%);
+    }
+
+    #data {
+      font-family: Georgia, serif;
+      font-size: 1.1em;
+      float: left;
+      color: darken($grey, 45%);
+    }
+
+    #example {
+      // font-style: italic;
+      font-family: "Inconsolata", monospace;
+      font-size: 0.9em;
+      line-height: 85%;
+      margin-left: 0.5em;
+      width: 25em;
+      padding: 5px;
+      // background-color: $prettyPeach;
+      color: darken($prettyPeach, 20%);
+      border-radius: 10px;
+    }
   }
 
-  #graph {
-    font-family: Georgia,serif; 
-    font-size: 1.5em;
-    color: darken($grey, 45%);
-  }
-
-  #data {
-    font-family: Georgia,serif; 
-    font-size: 1.1em;
-    float: left;
-    color: darken($grey, 45%);
-  }
-
-  #example {
-    // font-style: italic;
-    font-family: 'Inconsolata', monospace;
-    font-size: 0.9em;
-    margin-left: 0.8em;
-    width: 335px;
-    padding: 5px;
-    // background-color: $prettyPeach; 
-    color: darken($prettyPeach, 20%);
-    border-radius: 10px
-
-  }
-}
- 
-  #chartistGraph {
-    margin-right: 0.5em;
+  #innerBox {
+    margin-left: 0.5em;
   }
 
   #submitBtn {
     background-color: $grey;
     color: $peach;
-    font-family: 'Inconsolata', monospace;
+    font-family: "Inconsolata", monospace;
     font-size: 0.8em;
     /* margin-left: 1em;
     margin-right: 0.45em; */
@@ -81,36 +107,40 @@ body {
     border-radius: 10px;
     border-color: $peach;
   }
-#selectText {
-  font-family: 'Inconsolata', monospace;
-    font-size: 0.9em;
-    margin-left: 0.8em;
-}
-  #select {
-    margin-left: 0.5em;
-    color: $peach;
-    font-family: 'Inconsolata', monospace;
-    /* margin-left: 1em;
-    margin-right: 0.45em; */
-    border: 1;
-    font-size: 0.8em;
-    border-radius: 10px;
-    border-color: $peach;
-  }
 
-  #saveBtn {
-    background-color: #a92f32;//$peach;
-    font-family: 'Inconsolata', monospace;
-    color: $grey;//$grey;
-    margin-left: 0.5em;
-    // margin-right: 0.45em; 
-    font-size: 0.9em;
-    /* margin-left: 1em;
-    margin-right: 0.45em; */
-    height: 1.3em;
-    border-color: #a92f32;//$peach;
-    border-radius: 2;
-    border-radius: 10px;
-  }
+  #graphButtons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 
+    #saveBtn {
+      background-color: #a92f32; //$peach;
+      font-family: "Inconsolata", monospace;
+      color: $grey; //$grey;
+      margin-left: 0.5em;
+      // margin-right: 0.45em;
+      font-size: 0.9em;
+      /* margin-left: 1em;
+      margin-right: 0.45em; */
+      height: 1.3em;
+      border-color: $chartistRed; //$peach;
+      border-radius: 2;
+      border-radius: 10px;
+    }
+
+    #storeGraphBtn {
+      background-color: $grey; //$peach;
+      font-family: "Inconsolata", monospace;
+      color: $chartistRed; //$grey;
+      margin-left: 0.5em;
+      // margin-right: 0.45em;
+      font-size: 0.9em;
+      /* margin-left: 1em;
+      margin-right: 0.45em; */
+      height: 1.3em;
+      border-color: $chartistRed; //$peach;
+      border-radius: 2;
+      border-radius: 10px;
+    }
+  }
 }
