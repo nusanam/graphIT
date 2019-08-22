@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  mode: "production",
+  mode: "development",
   // publicPath: '/dist/',
   entry: './client/index.js', // entry point of root JS file
   performance: { hints: false },

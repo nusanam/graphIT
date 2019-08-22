@@ -1,6 +1,7 @@
-// @import url("https://p.typekit.net/p.css?s=1&k=swf2hgm&ht=tk&f=30810.30811.30768.30770.30771&a=2637445&app=typekit&e=css");
+@import url('https://fonts.googleapis.com/css?family=Inconsolata|Montserrat&display=swap');
 
 $peach: #D68D86;
+$prettyPeach: #e0c7c7;
 $turqoise: #27ccb3;
 $grey: #F6F6F6;
 // $brightPeach: #FFDBCB;
@@ -30,24 +31,34 @@ body {
   }
 
   #data {
-    font-size: 1.2em;
+    font-size: 1.1em;
+    float: left;
     color: darken($grey, 45%);
   }
 
   #example {
-    font-style: italic;
-    font-size: 1.1em;
+    // font-style: italic;
+    font-family: 'Inconsolata', monospace;
+    font-size: 0.9em;
     margin-left: 0.8em;
-    width: 80%;
-    color: lighten($peach, 10%)
+    width: 315px;
+    padding: 5px;
+    background-color: $prettyPeach; 
+    color: darken(white, 1%);
+    border-radius: 10px
+
   }
+
+ 
 
   #submitBtn {
     background-color: white;
     color: $peach;
+    font-size: 0.8em;
     /* margin-left: 1em;
     margin-right: 0.45em; */
     border: 1;
+    height: 1.5em;
     border-radius: 10px;
     border-color: $peach;
   }
