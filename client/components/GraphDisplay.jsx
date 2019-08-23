@@ -2,38 +2,39 @@ import React from 'react';
 // import ReactDOM from 'react-dom';
 import '../index.scss';
 import ChartistGraph from 'react-chartist';
-import * as V from 'victory';
+
 
 class GraphDisplay extends React.Component {
-
+  constructor(props) {
+    super(props)
+    this.dataArr = []
+    // this.currType = 'Line';
+  }
   render() {
     console.log('Props object BEFORE passing labels/series into chartist\'s required data object', this.props)
-    const { labels, series, /*options, type*/ } = this.props;
-    console.log('series before passing down into chartist graph template', series)
+    const { labels, series/*options,*/ } = this.props;
+    
 
-      // pushing submitted y values into an array
-    //   const dataArr = [];
-    // dataArr.push(series);
+    // pushing submitted y values into an array
+    this.dataArr.push(series);
     // const deepCloneArray = JSON.parse(JSON.stringify(dataArr))
-
+    
     const data = {
       labels: labels,
-      series: [series] 
+      series: this.dataArr,
       // 
       //[6, 8, 9, 10, 20, 10, 10, 17, 18, 20, 22, 27, 29]
     };
-    console.log('ARE LABELS & SERIES PASSING IN?', data)
-
+    console.log('ARE LABELS & SERIES PASSING IN?', type)
+    
     const options = {
       // high: 30,
       // low: 0,
       divisor: 400,
       showArea: false,
-      axisX: {
-      }
     };
+    let type = 'Bar';
     // this is the type of chart you want to display
-    let type = 'Line'
 
     return (
       <div id="innerBox">
@@ -42,7 +43,7 @@ class GraphDisplay extends React.Component {
           <div id="selectTypeDiv">
             <span id="selectText">
               What kind of graph would you like? &nbsp;</span>
-            <select id="select">
+            <select id="select" ref="graphType" >
               <option value="Line">Line</option>
               <option value="Bar">Bar</option>
             </select>

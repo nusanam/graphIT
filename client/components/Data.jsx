@@ -15,30 +15,26 @@ class Data extends Component {
   render() {
     // if you add constructor class and super(props), you inhert state and props from the parent component 
     const { labels, series, updateStateX, updateStateY } = this.props;
+    // console.log('indata', type)
     
-    // checkEmpty() {
-    //   return 2 + 2;
-    // }
-
     return (
       <div className="outerbox">
-
+        <br />
         {/* X-Axis Labels section */}
         <div id="xaxis">
           <span id="data">
             X-axis Values: &nbsp; </span>
           <form onSubmit={updateStateX}>
-        <p>
             <input id="input" type="text" size="30" placeholder="Kiwis, Peaches, Pears, Apples..." />
             &nbsp; &nbsp;
              <input id="submitBtn" type="submit" value="Submit" />
-        </p>
+        <br/>
           </form>
           <br /><div id="example">
             Input each x-axis value separated by <strong><u>one space</u></strong> as one line before hitting the submit button.  <br /><br />
             Each value will appear on the graph as a label on the horizontal axis for the x-value it represents. 
             </div>
-          <br /> <br /> 
+          <br />
         </div>
         {/* Submit data section */}
         <div id="yaxis">
@@ -50,7 +46,7 @@ class Data extends Component {
           &nbsp;&nbsp;
           <input id="submitBtn" type="submit" value="Submit" />
           </form>
-          <br/><br />
+          <br/>
         <div id="example">
           Submit a single dataset of y-values at a time as an <span id="highlightWord" style={{ color: '#D70005', backgroundColor: '#f2f2f2' }} ><code>array</code></span> of values. If a data value inside of this dataset doesn't exist, use <span id="highlightWord" style={{ color: '#D70005', backgroundColor: '#f2f2f2' }} ><code>null</code></span> in its place inside of the <span id="highlightWord" style={{ color: '#D70005', backgroundColor: '#f2f2f2' }} ><code>array</code></span>.
           <br /> <br />
@@ -62,6 +58,8 @@ class Data extends Component {
         <GraphDisplay
           labels={labels}
           series={series}
+          // changeType={changeType}
+          // type={type}
         // options={options}
         // type={type}
         />
